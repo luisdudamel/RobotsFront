@@ -1,12 +1,15 @@
 {
-  "name": "202204-w6chwe-luis-dudamel-front",
+  "name": "base",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
@@ -21,9 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test-coverage": "jest --coverage --watchall=false",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test-coverage": "npm run test -- --coverage --watchall=false"
   },
   "eslintConfig": {
     "extends": [
@@ -44,17 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^27.5.1",
-    "eslint": "^8.15.0",
-    "husky": "^7.0.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "*.js",
-      "./**/*.js",
-      "!.eslintrc.js",
-      "!coverage/**/*.js"
-    ],
-    "testEnviroment": "jsdom"
+    "husky": "^7.0.0",
+    "msw": "^0.39.2"
   }
 }
