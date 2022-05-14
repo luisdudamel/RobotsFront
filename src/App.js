@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { RobotsList } from "./components/RobotsList/RobotsList";
 import { loadRobotsThunk } from "./redux/thunks/robotsThunks";
 
 const MainContainer = styled.div`
@@ -15,12 +16,12 @@ function App() {
     dispatch(loadRobotsThunk());
   }, [dispatch]);
 
-  const robots = useSelector((state) => state.robots);
-
   return (
     <MainContainer>
       <Container fluid className="vh-100">
-        <Row></Row>
+        <Row>
+          <RobotsList></RobotsList>
+        </Row>
       </Container>
     </MainContainer>
   );
