@@ -8,4 +8,6 @@ const robotsSlice = createSlice({
   },
 });
 
+export const { loadRobots: loadRobotsActionCreator } = robotsSlice.actions;
+
 export default robotsSlice.reducer;
