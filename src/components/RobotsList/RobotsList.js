@@ -1,7 +1,16 @@
-import styled from "styled-components";
-
-const RobotsListContainer = styled.div``;
+import { useSelector } from "react-redux";
 
 export const RobotsList = () => {
-  return RobotsListContainer;
+  const robots = useSelector((state) => state.robots);
+
+  return (
+    <ul>
+      {robots.map((robot) => (
+        <li>
+          {robot.name}
+          {robot.speed}
+        </li>
+      ))}
+    </ul>
+  );
 };
