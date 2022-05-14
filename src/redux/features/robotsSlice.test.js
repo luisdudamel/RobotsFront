@@ -1,15 +1,13 @@
 import fakeRobotsToTest from "../../utilities/fakeRobotsToTest";
-import robotsReducer from "./robotsSlice";
+import robotsReducer, { loadRobotsActionCreator } from "./robotsSlice";
 
-describe("Given a robotsReducer reducer", () => {
+describe("Given a robotsReducer", () => {
   describe("When it receives a list of robots and an unknown action", () => {
     test("Then it should return the same list of robots", () => {
-      const action = {
-        type: "list/doWhatever",
-      };
       const robotsList = fakeRobotsToTest;
 
-      const receivedResult = robotsReducer(fakeRobotsToTest, action);
+      const robotLoadAction = loadRobotsActionCreator(robotsList);
+      const receivedResult = robotsReducer(fakeRobotsToTest, robotLoadAction);
 
       expect(receivedResult).toEqual(robotsList);
     });

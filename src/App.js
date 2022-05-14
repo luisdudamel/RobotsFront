@@ -20,7 +20,7 @@ function App() {
   return (
     <MainContainer>
       <Container fluid className="vh-100">
-        <Row>{robots[0].name}</Row>
+        <Row></Row>
       </Container>
     </MainContainer>
   );
