@@ -9,10 +9,7 @@ function App() {
   return (
     <MainContainer>
       <Container fluid className="vh-100">
-        <Row>
-          <Col>EN CONSTRUCCION CAPO</Col>
-          <Col>EN CONSTRUCCION CAPO</Col>
-        </Row>
+        <Row></Row>
       </Container>
     </MainContainer>
   );
