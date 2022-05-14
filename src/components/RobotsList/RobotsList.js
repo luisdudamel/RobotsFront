@@ -2,4 +2,6 @@ import styled from "styled-components";
 
 const RobotsListContainer = styled.div``;
 
-export const RobotsList = () => {};
+export const RobotsList = () => {
+  return RobotsListContainer;
+};
