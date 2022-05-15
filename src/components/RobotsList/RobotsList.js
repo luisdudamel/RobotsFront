@@ -34,8 +34,14 @@ const StyledRobotList = styled.div`
         border: none;
         &--delete {
           background-color: red;
+          border: none;
         }
       }
+    }
+    button:focus {
+      outline: none !important;
+      outline-offset: none !important;
+      box-shadow: none !important;
     }
   }
 `;
