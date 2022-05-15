@@ -1,3 +1,4 @@
+import { number, PropTypes, string } from "prop-types";
 import { Button, Card, Col } from "react-bootstrap";
 
 export const Robot = ({
@@ -18,4 +19,14 @@ export const Robot = ({
       </Card>
     </Col>
   );
+};
+
+Robot.propTypes = {
+  robot: PropTypes.shape({
+    name: string.isRequired,
+    speed: string.isRequired,
+    image: string.isRequired,
+    stamina: string.isRequired,
+    creationDate: string.isRequired,
+  }).isRequired,
 };
