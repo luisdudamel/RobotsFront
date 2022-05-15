@@ -16,8 +16,6 @@ describe("Given a Robot component", () => {
         creationDate: "26/10/1984",
       };
 
-      const expectedText = "C3P0";
-
       render(
         <Provider store={store}>
           <Robot robot={robotToRender}></Robot>
