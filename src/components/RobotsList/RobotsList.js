@@ -25,10 +25,16 @@ const StyledRobotList = styled.div`
         background-color: #515859;
         box-shadow: 5px 5px 4px -5px #000000;
         border-radius: 10px;
+        .card-title {
+          font-size: 30px;
+        }
       }
-    }
-    button {
-      margin: 5px;
+      &__button {
+        margin: 5px;
+        &--delete {
+          background-color: red;
+        }
+      }
     }
   }
 `;

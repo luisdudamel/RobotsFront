@@ -10,8 +10,8 @@ export const Robot = (robot) => {
           <Card.Text>Speed: {robot.robot.speed}</Card.Text>
           <Card.Text>Stamina: {robot.robot.stamina}</Card.Text>
           <Card.Text>Born: {robot.robot.creationDate}</Card.Text>
-          <Button>Edit</Button>
-          <Button>Delete</Button>
+          <Button className="robots-container__button">Edit</Button>
+          <Button className="robots-container__button--delete">Delete</Button>
         </Card.Body>
       </Card>
     </Col>
