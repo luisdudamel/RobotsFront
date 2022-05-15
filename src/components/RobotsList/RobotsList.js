@@ -5,6 +5,7 @@ import { Robot } from "../Robot/Robot";
 
 const StyledRobotList = styled.div`
   margin-top: 20px;
+
   .card-img-top {
     padding-top: 5px;
     width: 200px;
@@ -12,6 +13,7 @@ const StyledRobotList = styled.div`
     object-fit: cover;
     border-radius: 5px;
   }
+
   .card {
     align-items: center;
   }
@@ -35,7 +37,14 @@ const StyledRobotList = styled.div`
         &--delete {
           background-color: red;
           border: none;
+          width: 170px;
         }
+      }
+      &__card {
+        background-color: #515859;
+      }
+      &__text {
+        background-color: #515859;
       }
     }
     button:focus {
@@ -45,12 +54,18 @@ const StyledRobotList = styled.div`
     }
   }
 `;
+const StyledHeading = styled.h1`
+  color: white;
+  font-size: 50px;
+  text-align: center;
+`;
 
 export const RobotsList = () => {
   const robots = useSelector((state) => state.robots);
 
   return (
     <StyledRobotList>
+      <StyledHeading>Robots List</StyledHeading>
       <Row xs={1} md={2} lg={4}>
         {robots.map((robot) => (
           <Robot key={robot._id} robot={robot}></Robot>

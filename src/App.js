@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { RobotsList } from "./components/RobotsList/RobotsList";
 import { loadRobotsThunk } from "./redux/thunks/robotsThunks";
@@ -12,7 +12,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Container fluid className="vh-100">
+    <Container fluid className="vh-95">
       <RobotsList></RobotsList>
     </Container>
   );
