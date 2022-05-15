@@ -46,7 +46,7 @@ export const RobotsList = () => {
     <StyledRobotList>
       <Row xs={1} md={2} lg={4}>
         {robots.map((robot) => (
-          <Robot robot={robot}></Robot>
+          <Robot key={robot._id} robot={robot}></Robot>
         ))}
       </Row>
     </StyledRobotList>
