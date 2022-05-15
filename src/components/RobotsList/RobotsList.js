@@ -31,6 +31,7 @@ const StyledRobotList = styled.div`
       }
       &__button {
         margin: 5px;
+        border: none;
         &--delete {
           background-color: red;
         }
