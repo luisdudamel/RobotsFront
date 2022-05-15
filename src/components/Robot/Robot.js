@@ -1,9 +1,16 @@
 import { PropTypes, string } from "prop-types";
 import { Button, Card, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { deleteRobotThunk } from "../../redux/thunks/robotsThunks";
 
 export const Robot = ({
-  robot: { name, image, speed, stamina, creationDate },
+  robot: { name, image, speed, stamina, creationDate, _id },
 }) => {
+  const dispatch = useDispatch();
+  const deleteAction = () => {
+    dispatch(deleteRobotThunk(_id));
+  };
+
   return (
     <Col className="robots-container">
       <Card className="robots-container__robot" style={{ width: "15rem" }}>
@@ -19,7 +26,12 @@ export const Robot = ({
           <Card.Text className="robots-container__text">
             Born: {creationDate}
           </Card.Text>
-          <Button className="robots-container__button--delete">Delete</Button>
+          <Button
+            onClick={deleteAction}
+            className="robots-container__button--delete"
+          >
+            Delete
+          </Button>
         </Card.Body>
       </Card>
     </Col>
