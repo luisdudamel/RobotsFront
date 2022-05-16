@@ -7,7 +7,12 @@ import {
 export const loadRobotsThunk = () => async (dispatch) => {
   try {
     const { data: robots, status } = await axios.get(
-      process.env.REACT_APP_API_URL
+      process.env.REACT_APP_API_URL,
+      {
+        headers: {
+          usertoken: `${process.env.REACT_APP_API_TOKEN}`,
+        },
+      }
     );
 
     if (status === 200) {
@@ -18,7 +23,7 @@ export const loadRobotsThunk = () => async (dispatch) => {
 
 export const deleteRobotThunk = (id) => async (dispatch) => {
   try {
-    const { data: robots, status } = await axios.delete(`
+    const { data: status } = await axios.delete(`
       ${process.env.REACT_APP_API_URL}delete/${id}`);
 
     if (status === 200) {
