@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import loginThunk from "../../redux/thunks/loginThunk";
+import { loginThunk } from "../../redux/thunks/userThunks";
 
 const LoginForm = () => {
-  const blankFields = {
+  const emptyFields = {
     username: "",
     password: "",
   };
 
-  const [formData, setFormData] = useState(blankFields);
+  const [formData, setFormData] = useState(emptyFields);
   const [buttonDisabled, setButtonDisable] = useState(true);
 
   const dispatch = useDispatch();
@@ -21,13 +21,15 @@ const LoginForm = () => {
     }
   }, [formData]);
 
-  const changeData = (event) => {
+  const modifyData = (event) => {
     setFormData({
       ...formData,
+      [event.target.id]: event.target.value,
     });
   };
   const submitLogin = (event) => {
     event.preventDefault();
+
     dispatch(loginThunk(formData));
   };
 
@@ -37,16 +39,17 @@ const LoginForm = () => {
       <input
         id="username"
         value={formData.username}
-        onChange={changeData}
+        onChange={modifyData}
       ></input>
       <label htmlFor="password"></label>
       <input
         id="password"
         type="password"
+        autoComplete="on"
         value={formData.password}
-        onChange={changeData}
+        onChange={modifyData}
       ></input>
-      <button disabled={buttonDisabled} type="submit" onSubmit={submitLogin}>
+      <button disabled={buttonDisabled} type="submit" onClick={submitLogin}>
         LOGIN
       </button>
     </form>
