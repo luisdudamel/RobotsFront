@@ -1,6 +1,7 @@
 import { Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import LoginForm from "../LoginForm/LoginForm";
 import { Robot } from "../Robot/Robot";
 
 const StyledRobotList = styled.div`
@@ -53,6 +54,14 @@ const StyledRobotList = styled.div`
       box-shadow: none !important;
     }
   }
+  form {
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    button {
+      height: 35px;
+    }
+  }
 `;
 const StyledHeading = styled.h1`
   color: white;
@@ -66,6 +75,7 @@ export const RobotsList = () => {
   return (
     <StyledRobotList>
       <StyledHeading>Robots List</StyledHeading>
+      <LoginForm></LoginForm>
       <Row xs={1} md={2} lg={4}>
         {robots.map((robot) => (
           <Robot key={robot._id} robot={robot}></Robot>
