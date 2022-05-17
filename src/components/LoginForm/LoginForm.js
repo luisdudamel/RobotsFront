@@ -31,9 +31,9 @@ const LoginForm = () => {
   };
   const submitLogin = async (event) => {
     event.preventDefault();
-
     await dispatch(loginThunk(formData));
     await dispatch(loadRobotsThunk());
+    setFormData(emptyFields);
   };
 
   return (
