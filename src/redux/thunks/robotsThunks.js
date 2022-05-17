@@ -4,13 +4,15 @@ import {
   loadRobotsActionCreator,
 } from "../features/robotsSlice";
 
+const localToken = `Bearer ${localStorage.getItem("token")}`;
+
 export const loadRobotsThunk = () => async (dispatch) => {
   try {
     const { data: robots, status } = await axios.get(
-      process.env.REACT_APP_API_URL,
+      `${process.env.REACT_APP_API_URL}robots/`,
       {
         headers: {
-          usertoken: `${process.env.REACT_APP_API_TOKEN}`,
+          Authorization: localToken,
         },
       }
     );
