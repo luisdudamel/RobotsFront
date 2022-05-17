@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { loadRobotsThunk } from "../../redux/thunks/robotsThunks";
 import { loginThunk } from "../../redux/thunks/userThunks";
 
 const LoginForm = () => {
@@ -27,10 +28,11 @@ const LoginForm = () => {
       [event.target.id]: event.target.value,
     });
   };
-  const submitLogin = (event) => {
+  const submitLogin = async (event) => {
     event.preventDefault();
 
-    dispatch(loginThunk(formData));
+    await dispatch(loginThunk(formData));
+    await dispatch(loadRobotsThunk());
   };
 
   return (
